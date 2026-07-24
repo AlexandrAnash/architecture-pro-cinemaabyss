@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="CinemaAbyss API Tests" tests="22" time="0.000">
+  <testsuite name="Monolith Service / Health Check" id="a3e19cf4-cc90-442f-bfec-8f8fdd24cdeb" timestamp="2026-07-23T12:45:56.558Z" tests="1" failures="1" errors="1" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+
+---
+]]></system-err>
+    <testcase name="Status code is 200" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="expected { Object (id, _details, ...) } to have property 'code'">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Monolith Service / Health Check.]]>
+        <![CDATA[Test description: Status code is 200.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:1).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Monolith Service / Get All Users" id="ad6f6c92-012a-4566-95b4-e396c0801913" timestamp="2026-07-23T12:45:56.558Z" tests="2" failures="2" errors="1" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+
+---
+]]></system-err>
+    <testcase name="Status code is 200" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="expected { Object (id, _details, ...) } to have property 'code'">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Monolith Service / Get All Users.]]>
+        <![CDATA[Test description: Status code is 200.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:2).]]>
+      </failure>
+    </testcase>
+    <testcase name="Response is an array" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="&quot;undefined&quot; is not valid JSON">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Monolith Service / Get All Users.]]>
+        <![CDATA[Test description: Response is an array.]]>
+        <![CDATA[Error message: "undefined" is not valid JSON.]]>
+        <![CDATA[Stacktrace: JSONError: "undefined" is not valid JSON
+   at Object.eval sandbox-script.js:2:2).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Monolith Service / Create User" id="d41c37e6-92d7-4364-8c30-6c4ae349ae63" timestamp="2026-07-23T12:45:56.558Z" tests="2" failures="2" errors="1" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+
+---
+]]></system-err>
+    <testcase name="Status code is 201" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="expected { Object (id, _details, ...) } to have property 'code'">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Monolith Service / Create User.]]>
+        <![CDATA[Test description: Status code is 201.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:3).]]>
+      </failure>
+    </testcase>
+    <testcase name="Response has id" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="&quot;undefined&quot; is not valid JSON">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Monolith Service / Create User.]]>
+        <![CDATA[Test description: Response has id.]]>
+        <![CDATA[Error message: "undefined" is not valid JSON.]]>
+        <![CDATA[Stacktrace: JSONError: "undefined" is not valid JSON
+   at Object.eval sandbox-script.js:2:3).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Monolith Service / Get User by ID" id="4dc1c3d9-73de-43ba-a7f0-6c9e9151c38d" timestamp="2026-07-23T12:45:56.558Z" tests="2" failures="2" errors="1" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+
+---
+]]></system-err>
+    <testcase name="Status code is 200" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="expected { Object (id, _details, ...) } to have property 'code'">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Monolith Service / Get User by ID.]]>
+        <![CDATA[Test description: Status code is 200.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:4).]]>
+      </failure>
+    </testcase>
+    <testcase name="User ID matches" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="&quot;undefined&quot; is not valid JSON">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Monolith Service / Get User by ID.]]>
+        <![CDATA[Test description: User ID matches.]]>
+        <![CDATA[Error message: "undefined" is not valid JSON.]]>
+        <![CDATA[Stacktrace: JSONError: "undefined" is not valid JSON
+   at Object.eval sandbox-script.js:2:4).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Monolith Service / Get All Movies" id="d8267d60-c08d-4131-9934-5ed2b437e36f" timestamp="2026-07-23T12:45:56.558Z" tests="2" failures="2" errors="1" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+
+---
+]]></system-err>
+    <testcase name="Status code is 200" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="expected { Object (id, _details, ...) } to have property 'code'">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Monolith Service / Get All Movies.]]>
+        <![CDATA[Test description: Status code is 200.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:5).]]>
+      </failure>
+    </testcase>
+    <testcase name="Response is an array" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="&quot;undefined&quot; is not valid JSON">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Monolith Service / Get All Movies.]]>
+        <![CDATA[Test description: Response is an array.]]>
+        <![CDATA[Error message: "undefined" is not valid JSON.]]>
+        <![CDATA[Stacktrace: JSONError: "undefined" is not valid JSON
+   at Object.eval sandbox-script.js:2:5).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Monolith Service / Create Movie" id="e756adb5-86da-4fc1-ab33-2a521572d28b" timestamp="2026-07-23T12:45:56.558Z" tests="2" failures="2" errors="1" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+
+---
+]]></system-err>
+    <testcase name="Status code is 201" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="expected { Object (id, _details, ...) } to have property 'code'">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Monolith Service / Create Movie.]]>
+        <![CDATA[Test description: Status code is 201.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:6).]]>
+      </failure>
+    </testcase>
+    <testcase name="Response has id" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="&quot;undefined&quot; is not valid JSON">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Monolith Service / Create Movie.]]>
+        <![CDATA[Test description: Response has id.]]>
+        <![CDATA[Error message: "undefined" is not valid JSON.]]>
+        <![CDATA[Stacktrace: JSONError: "undefined" is not valid JSON
+   at Object.eval sandbox-script.js:2:6).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Monolith Service / Get Movie by ID" id="c5dd8af4-503f-46b7-8f2a-3819e96466bd" timestamp="2026-07-23T12:45:56.558Z" tests="2" failures="2" errors="1" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+
+---
+]]></system-err>
+    <testcase name="Status code is 200" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="expected { Object (id, _details, ...) } to have property 'code'">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Monolith Service / Get Movie by ID.]]>
+        <![CDATA[Test description: Status code is 200.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:7).]]>
+      </failure>
+    </testcase>
+    <testcase name="Movie ID matches" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="&quot;undefined&quot; is not valid JSON">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Monolith Service / Get Movie by ID.]]>
+        <![CDATA[Test description: Movie ID matches.]]>
+        <![CDATA[Error message: "undefined" is not valid JSON.]]>
+        <![CDATA[Stacktrace: JSONError: "undefined" is not valid JSON
+   at Object.eval sandbox-script.js:2:7).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Monolith Service / Create Payment" id="0e75249f-cf59-4a94-9e1b-85cd48c932c5" timestamp="2026-07-23T12:45:56.558Z" tests="2" failures="2" errors="1" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+
+---
+]]></system-err>
+    <testcase name="Status code is 201" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="expected { Object (id, _details, ...) } to have property 'code'">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Monolith Service / Create Payment.]]>
+        <![CDATA[Test description: Status code is 201.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:8).]]>
+      </failure>
+    </testcase>
+    <testcase name="Response has id" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="&quot;undefined&quot; is not valid JSON">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Monolith Service / Create Payment.]]>
+        <![CDATA[Test description: Response has id.]]>
+        <![CDATA[Error message: "undefined" is not valid JSON.]]>
+        <![CDATA[Stacktrace: JSONError: "undefined" is not valid JSON
+   at Object.eval sandbox-script.js:2:8).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Monolith Service / Get Payment by ID" id="528feb03-2d89-4d4b-8419-7a0092f5304a" timestamp="2026-07-23T12:45:56.558Z" tests="2" failures="2" errors="1" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+
+---
+]]></system-err>
+    <testcase name="Status code is 200" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="expected { Object (id, _details, ...) } to have property 'code'">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Monolith Service / Get Payment by ID.]]>
+        <![CDATA[Test description: Status code is 200.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:9).]]>
+      </failure>
+    </testcase>
+    <testcase name="Payment ID matches" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="&quot;undefined&quot; is not valid JSON">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Monolith Service / Get Payment by ID.]]>
+        <![CDATA[Test description: Payment ID matches.]]>
+        <![CDATA[Error message: "undefined" is not valid JSON.]]>
+        <![CDATA[Stacktrace: JSONError: "undefined" is not valid JSON
+   at Object.eval sandbox-script.js:2:9).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Monolith Service / Create Subscription" id="e5da439c-7370-49da-ab7a-63521110aa43" timestamp="2026-07-23T12:45:56.558Z" tests="2" failures="2" errors="1" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+
+---
+]]></system-err>
+    <testcase name="Status code is 201" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="expected { Object (id, _details, ...) } to have property 'code'">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Monolith Service / Create Subscription.]]>
+        <![CDATA[Test description: Status code is 201.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:10).]]>
+      </failure>
+    </testcase>
+    <testcase name="Response has id" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="&quot;undefined&quot; is not valid JSON">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Monolith Service / Create Subscription.]]>
+        <![CDATA[Test description: Response has id.]]>
+        <![CDATA[Error message: "undefined" is not valid JSON.]]>
+        <![CDATA[Stacktrace: JSONError: "undefined" is not valid JSON
+   at Object.eval sandbox-script.js:2:10).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Monolith Service / Get Subscription by ID" id="a08eee35-3b93-4dcc-a481-0cb1ce9167fa" timestamp="2026-07-23T12:45:56.558Z" tests="2" failures="2" errors="1" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8080
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+
+---
+]]></system-err>
+    <testcase name="Status code is 200" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="expected { Object (id, _details, ...) } to have property 'code'">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Monolith Service / Get Subscription by ID.]]>
+        <![CDATA[Test description: Status code is 200.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:11).]]>
+      </failure>
+    </testcase>
+    <testcase name="Subscription ID matches" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="&quot;undefined&quot; is not valid JSON">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Monolith Service / Get Subscription by ID.]]>
+        <![CDATA[Test description: Subscription ID matches.]]>
+        <![CDATA[Error message: "undefined" is not valid JSON.]]>
+        <![CDATA[Stacktrace: JSONError: "undefined" is not valid JSON
+   at Object.eval sandbox-script.js:2:11).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Movies Microservice / Health Check" id="b0672598-74a0-4a16-baa5-7e5c7dd270e5" timestamp="2026-07-23T12:45:56.558Z" tests="2" failures="2" errors="1" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8081
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+
+---
+]]></system-err>
+    <testcase name="Status code is 200" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="expected { Object (id, _details, ...) } to have property 'code'">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Movies Microservice / Health Check.]]>
+        <![CDATA[Test description: Status code is 200.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:12).]]>
+      </failure>
+    </testcase>
+    <testcase name="Status is true" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="&quot;undefined&quot; is not valid JSON">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Movies Microservice / Health Check.]]>
+        <![CDATA[Test description: Status is true.]]>
+        <![CDATA[Error message: "undefined" is not valid JSON.]]>
+        <![CDATA[Stacktrace: JSONError: "undefined" is not valid JSON
+   at Object.eval sandbox-script.js:2:12).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Movies Microservice / Get All Movies" id="9d3e2986-aed5-49e3-964c-a39b6a9c0c0c" timestamp="2026-07-23T12:45:56.558Z" tests="2" failures="2" errors="1" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8081
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+
+---
+]]></system-err>
+    <testcase name="Status code is 200" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="expected { Object (id, _details, ...) } to have property 'code'">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Movies Microservice / Get All Movies.]]>
+        <![CDATA[Test description: Status code is 200.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:13).]]>
+      </failure>
+    </testcase>
+    <testcase name="Response is an array" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="&quot;undefined&quot; is not valid JSON">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Movies Microservice / Get All Movies.]]>
+        <![CDATA[Test description: Response is an array.]]>
+        <![CDATA[Error message: "undefined" is not valid JSON.]]>
+        <![CDATA[Stacktrace: JSONError: "undefined" is not valid JSON
+   at Object.eval sandbox-script.js:2:13).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Movies Microservice / Create Movie" id="6c0406f4-bace-4f62-85d6-dd7412b083f5" timestamp="2026-07-23T12:45:56.558Z" tests="2" failures="2" errors="1" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8081
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+
+---
+]]></system-err>
+    <testcase name="Status code is 201" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="expected { Object (id, _details, ...) } to have property 'code'">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Movies Microservice / Create Movie.]]>
+        <![CDATA[Test description: Status code is 201.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:14).]]>
+      </failure>
+    </testcase>
+    <testcase name="Response has id" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="&quot;undefined&quot; is not valid JSON">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Movies Microservice / Create Movie.]]>
+        <![CDATA[Test description: Response has id.]]>
+        <![CDATA[Error message: "undefined" is not valid JSON.]]>
+        <![CDATA[Stacktrace: JSONError: "undefined" is not valid JSON
+   at Object.eval sandbox-script.js:2:14).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Movies Microservice / Get Movie by ID" id="3d17a599-0528-41c8-be83-76de9b7ab0fb" timestamp="2026-07-23T12:45:56.558Z" tests="2" failures="2" errors="1" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8081
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+
+---
+]]></system-err>
+    <testcase name="Status code is 200" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="expected { Object (id, _details, ...) } to have property 'code'">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Movies Microservice / Get Movie by ID.]]>
+        <![CDATA[Test description: Status code is 200.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:15).]]>
+      </failure>
+    </testcase>
+    <testcase name="Movie ID matches" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="&quot;undefined&quot; is not valid JSON">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Movies Microservice / Get Movie by ID.]]>
+        <![CDATA[Test description: Movie ID matches.]]>
+        <![CDATA[Error message: "undefined" is not valid JSON.]]>
+        <![CDATA[Stacktrace: JSONError: "undefined" is not valid JSON
+   at Object.eval sandbox-script.js:2:15).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Events Microservice / Health Check" id="d5dbffb1-8d92-4988-9b24-65e839815240" timestamp="2026-07-23T12:45:56.558Z" tests="2" failures="2" errors="1" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8082
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+
+---
+]]></system-err>
+    <testcase name="Status code is 200" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="expected { Object (id, _details, ...) } to have property 'code'">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Events Microservice / Health Check.]]>
+        <![CDATA[Test description: Status code is 200.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:16).]]>
+      </failure>
+    </testcase>
+    <testcase name="Status is true" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="&quot;undefined&quot; is not valid JSON">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Events Microservice / Health Check.]]>
+        <![CDATA[Test description: Status is true.]]>
+        <![CDATA[Error message: "undefined" is not valid JSON.]]>
+        <![CDATA[Stacktrace: JSONError: "undefined" is not valid JSON
+   at Object.eval sandbox-script.js:2:16).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Events Microservice / Create Movie Event" id="0a81d77a-259c-431f-886d-0d88a69a04c7" timestamp="2026-07-23T12:45:56.558Z" tests="2" failures="2" errors="1" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8082
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+
+---
+]]></system-err>
+    <testcase name="Status code is 201" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="expected { Object (id, _details, ...) } to have property 'code'">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Events Microservice / Create Movie Event.]]>
+        <![CDATA[Test description: Status code is 201.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:17).]]>
+      </failure>
+    </testcase>
+    <testcase name="Response has status success" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="&quot;undefined&quot; is not valid JSON">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Events Microservice / Create Movie Event.]]>
+        <![CDATA[Test description: Response has status success.]]>
+        <![CDATA[Error message: "undefined" is not valid JSON.]]>
+        <![CDATA[Stacktrace: JSONError: "undefined" is not valid JSON
+   at Object.eval sandbox-script.js:2:17).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Events Microservice / Create User Event" id="192d893f-bb26-4632-97b0-48740570a9cc" timestamp="2026-07-23T12:45:56.558Z" tests="2" failures="2" errors="1" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8082
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+
+---
+]]></system-err>
+    <testcase name="Status code is 201" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="expected { Object (id, _details, ...) } to have property 'code'">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Events Microservice / Create User Event.]]>
+        <![CDATA[Test description: Status code is 201.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:18).]]>
+      </failure>
+    </testcase>
+    <testcase name="Response has status success" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="&quot;undefined&quot; is not valid JSON">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Events Microservice / Create User Event.]]>
+        <![CDATA[Test description: Response has status success.]]>
+        <![CDATA[Error message: "undefined" is not valid JSON.]]>
+        <![CDATA[Stacktrace: JSONError: "undefined" is not valid JSON
+   at Object.eval sandbox-script.js:2:18).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Events Microservice / Create Payment Event" id="bfbc5e3e-d5bb-40bd-9763-cdec47f7abbd" timestamp="2026-07-23T12:45:56.558Z" tests="2" failures="2" errors="1" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8082
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+
+---
+]]></system-err>
+    <testcase name="Status code is 201" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="expected { Object (id, _details, ...) } to have property 'code'">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Events Microservice / Create Payment Event.]]>
+        <![CDATA[Test description: Status code is 201.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:19).]]>
+      </failure>
+    </testcase>
+    <testcase name="Response has status success" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="&quot;undefined&quot; is not valid JSON">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Events Microservice / Create Payment Event.]]>
+        <![CDATA[Test description: Response has status success.]]>
+        <![CDATA[Error message: "undefined" is not valid JSON.]]>
+        <![CDATA[Stacktrace: JSONError: "undefined" is not valid JSON
+   at Object.eval sandbox-script.js:2:19).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Proxy Service / Health Check" id="604af55e-4762-40b0-a2a8-62a7bb390a05" timestamp="2026-07-23T12:45:56.558Z" tests="1" failures="1" errors="1" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+
+---
+]]></system-err>
+    <testcase name="Status code is 200" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="expected { Object (id, _details, ...) } to have property 'code'">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Proxy Service / Health Check.]]>
+        <![CDATA[Test description: Status code is 200.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:20).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Proxy Service / Get All Movies via Proxy" id="13280a9f-7e25-4f73-8d3e-c6ba4a59e996" timestamp="2026-07-23T12:45:56.558Z" tests="2" failures="2" errors="1" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+
+---
+]]></system-err>
+    <testcase name="Status code is 200" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="expected { Object (id, _details, ...) } to have property 'code'">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Proxy Service / Get All Movies via Proxy.]]>
+        <![CDATA[Test description: Status code is 200.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:21).]]>
+      </failure>
+    </testcase>
+    <testcase name="Response is an array" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="&quot;undefined&quot; is not valid JSON">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Proxy Service / Get All Movies via Proxy.]]>
+        <![CDATA[Test description: Response is an array.]]>
+        <![CDATA[Error message: "undefined" is not valid JSON.]]>
+        <![CDATA[Stacktrace: JSONError: "undefined" is not valid JSON
+   at Object.eval sandbox-script.js:2:21).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Proxy Service / Get All Users via Proxy" id="71ca1eb6-e899-404f-ac86-c3f2a44311e3" timestamp="2026-07-23T12:45:56.558Z" tests="2" failures="2" errors="1" time="0.000">
+    <system-err><![CDATA[Iteration: 0
+RequestError: Error: connect ECONNREFUSED 127.0.0.1:8000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+
+---
+]]></system-err>
+    <testcase name="Status code is 200" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="expected { Object (id, _details, ...) } to have property 'code'">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Proxy Service / Get All Users via Proxy.]]>
+        <![CDATA[Test description: Status code is 200.]]>
+        <![CDATA[Error message: expected { Object (id, _details, ...) } to have property 'code'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (id, _details, ...) } to have property 'code'
+   at Object.eval sandbox-script.js:1:22).]]>
+      </failure>
+    </testcase>
+    <testcase name="Response is an array" time="0.000" classname="CinemaAbyssApiTests">
+      <failure type="AssertionFailure" message="&quot;undefined&quot; is not valid JSON">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 76964aed-150f-4187-b794-d2e544712624.]]>
+        <![CDATA[Collection name: CinemaAbyss API Tests.]]>
+        <![CDATA[Request name: Proxy Service / Get All Users via Proxy.]]>
+        <![CDATA[Test description: Response is an array.]]>
+        <![CDATA[Error message: "undefined" is not valid JSON.]]>
+        <![CDATA[Stacktrace: JSONError: "undefined" is not valid JSON
+   at Object.eval sandbox-script.js:2:22).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+</testsuites>

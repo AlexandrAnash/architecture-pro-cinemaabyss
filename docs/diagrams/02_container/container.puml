@@ -1,0 +1,74 @@
+@startuml
+title Кинобездна Container Diagram
+top to bottom direction
+
+
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+Person(UserWeb, "User Web", "Пользователь Web")
+Person(UserSmartTv, "User Smart TV", "Пользователь Smart TV")
+Person(UserMobile, "User Mobile", "Пользователь мобильного устройства")
+
+System_Boundary(c1, "Кинобездна") {
+    Container(APIGatewayContainer, "API Gateway", "Сервис маршрутизирует запросы по нашим внутренним сервисам.")
+    
+    Container(AuthorizationContainer, "Authorization", "Сервис отвечает за авторизацию и отдает JWT")
+    ContainerDb(AuthorizationDB, "AuthorizationDB", "Хранит мета данные о фильмах", "Redis")
+
+    Container(MoviesContainer, "Movies", "Сервис отвечает хранение метаданных фильмов, каталогах")
+    ContainerDb(MoviesDB, "MoviesDB", "Хранит мета данные о фильмах")
+    
+    Container(VideoStreamContainer, "VideoStream", "Сервис отвечает за хранение фильмов и пока в реальном времени")
+
+    Container(SubscribeContainer, "Subscribe", "Сервис отвечает подписки пользователей")
+    ContainerDb(SubscribeDB, "SubscribeDB", "Хранит данные о подписках")
+
+    Container(SaleContainer, "SaleControl", "Сервис отвечает за акции, скидки, может иметь UI свою админку")
+    ContainerDb(SaleDB, "SaleDB", "Хранит информацию о скидках")
+
+    Container(EventsContainer, "EventsControl", "MVP сервис events, который будет при вызове API создавать и сам же читать сообщения в топике Kafka")
+
+    ContainerQueue(BrokerQueue, "BrokerQueue", "Отвечает за асинхронное общение между микросервисами", "Kafka")
+
+    Container(MainKinobezdnaContainer , "Монолит кинобездна", "Хранит: пользователей, избранное,  интеграция с рекомендательной системой, платежи")
+}
+System_Ext(Ext_PaymentDevices, "Платежная система", "Внешний сервис оплаты")
+System_Ext(Ext_OnlineCinema, "Онлайн кинотеатры", "Предоставляют информацию о фильмах онлайн")
+System_Ext(Ext_S3, "Внешнее хранилище видео", "Хранит видео и другу мета информацию")
+System_Ext(Ext_RecommendationSystem, "Система рекомендаций", "Предоставляют информацию с рекомендациями")
+
+Rel(UserWeb, APIGatewayContainer, "Взаимодействует с кинобездной через Web", "HTTPS/GraphQL")
+Rel(UserSmartTv, APIGatewayContainer, "Взаимодействует с кинобездной через Smart TV", "HTTPS/GraphQL")
+Rel(UserMobile, APIGatewayContainer, "Взаимодействует с кинобездной через Mobile", "HTTPS/GraphQL")
+
+Rel(APIGatewayContainer, AuthorizationContainer, "Проверяет авторизацию", "REST")
+Rel(APIGatewayContainer, MoviesContainer, "Направляет часть трафика вместо монолита /api/movies", "REST")
+Rel(APIGatewayContainer, VideoStreamContainer, "Получает видео поток ", "REST")
+Rel(APIGatewayContainer, SubscribeContainer, "Получаем информацию о подписках", "REST")
+Rel(APIGatewayContainer, SaleContainer, "Получаем информацию о скидках", "REST")
+Rel(APIGatewayContainer, MainKinobezdnaContainer, "Маршрутизирует часть /api/movies, до полной миграции", "REST")
+
+Rel(AuthorizationContainer, MainKinobezdnaContainer, "Берет данные из БД монолита", "REST")
+Rel(MoviesContainer, BrokerQueue, "Получаем изменения о фильмых")
+Rel(SubscribeContainer, BrokerQueue, "Публикуем/получаем информацию о подписках")
+Rel(SaleContainer, BrokerQueue, "публикуем/получаем информацию о скидках")
+Rel(MainKinobezdnaContainer, BrokerQueue, "успешные платежи, оформление подписок")
+Rel(EventsContainer, BrokerQueue, "создаем и читаем события")
+
+Rel(MainKinobezdnaContainer, Ext_S3, "Обращается к хранилищу за фильмами (старая логика)", "REST")
+Rel(MainKinobezdnaContainer, Ext_PaymentDevices, "оплата подписок", "REST")
+Rel(MainKinobezdnaContainer, Ext_OnlineCinema, "получаем данные из других онлайн кинотеатров", "REST")
+Rel(MainKinobezdnaContainer, Ext_RecommendationSystem, "данные рекомендательных систем", "REST")
+
+Rel(VideoStreamContainer, Ext_S3, "обращаемся к хранилищу за самим фильмом", "REST")
+
+Rel(AuthorizationContainer, AuthorizationDB, "Храним активные сессии", "SQL")
+
+Rel(MoviesContainer, MoviesDB, "мета данные для movies", "SQL")
+
+Rel(SubscribeContainer, SubscribeDB, "храним подписки", "SQL")
+
+Rel(SaleContainer, SaleDB, "храним скидки", "SQL")
+
+
+@enduml
