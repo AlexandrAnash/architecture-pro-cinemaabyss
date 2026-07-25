@@ -5,6 +5,9 @@ on:
     branches: [ main, master, cinema ]
   pull_request:
     branches: [ main, master, cinema ]
+  workflow_run:
+    workflows: ["Docker Build and Push"]
+    types: [completed]
   workflow_dispatch:
     inputs:
       environment:
@@ -23,8 +26,8 @@ on:
 jobs:
   api-tests:
     name: Run API Tests
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
-    needs: build-and-push
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
