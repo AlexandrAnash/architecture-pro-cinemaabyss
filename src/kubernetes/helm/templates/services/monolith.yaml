@@ -2,17 +2,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: monolith
+  name: {{ .Values.monolith.name }}
   namespace: {{ .Values.global.namespace }}
   labels:
-    app: monolith
+    app: {{ .Values.monolith.name }}
     app.kubernetes.io/name: {{ include "cinemaabyss.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
 spec:
   replicas: {{ .Values.monolith.replicas }}
   selector:
     matchLabels:
-      app: monolith
+      app: {{ .Values.monolith.name }}
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -21,10 +21,10 @@ spec:
   template:
     metadata:
       labels:
-        app: monolith
+        app: {{ .Values.monolith.name }}
     spec:
       containers:
-      - name: monolith
+      - name: {{ .Values.monolith.name }}
         image: {{ .Values.monolith.image.repository }}:{{ .Values.monolith.image.tag }}
         imagePullPolicy: {{ .Values.monolith.image.pullPolicy }}
         ports:
@@ -60,15 +60,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: monolith
+  name: {{ .Values.monolith.name }}
   namespace: {{ .Values.global.namespace }}
   labels:
-    app: monolith
+    app: {{ .Values.monolith.name }}
     app.kubernetes.io/name: {{ include "cinemaabyss.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
 spec:
   selector:
-    app: monolith
+    app: {{ .Values.monolith.name }}
   ports:
   - port: {{ .Values.monolith.service.port }}
     targetPort: {{ .Values.monolith.service.targetPort }}

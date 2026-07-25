@@ -5,8 +5,36 @@
 1. Спроектируйте to be архитектуру КиноБездны, разделив всю систему на отдельные домены и организовав интеграционное взаимодействие и единую точку вызова сервисов.
 Результат представьте в виде контейнерной диаграммы в нотации С4.
 Добавьте ссылку на файл в этот шаблон
-[ссылка на файл](ссылка)
+[Диаграмма контейнеров](./docs/diagrams/02_container/container.png)
 
+### TO BE 
+Домен: Платежи
+  входит: 
+    - обработка платежей, транзакции, интеграция с платёжными системами.
+
+Домен: Авторизация
+  входит: 
+    - авторизация 
+    - права доступа
+    - управление пользователями
+
+Домен: Movies
+  входит: 
+    - метаданные о фильмах (жанры, актёры, оценки)
+    - каталог видео 
+
+Домен: Видео Streaming 
+  входит: 
+    - стриминг видео
+    
+
+Домен: Подписки
+  входит: 
+    - тарифы/планы подписки, статус подписки пользователя, продление.
+
+Домен: Скидки
+  входит: 
+	  - управление акциями для компании в сервисе. 
 
 ## Задание 2
 
@@ -58,7 +86,8 @@
 
 Необходимые тесты для проверки этого API вызываются при запуске npm run test:local из папки tests/postman 
 Приложите скриншот тестов и скриншот состояния топиков Kafka http://localhost:8090 
-
+![Скриншот http://localhost:8090 ](./kafka-ui.png)
+![Скриншот тестов](./successful_tests.png)
 
 ## Задание 3
 
@@ -179,7 +208,11 @@ cat .docker/config.json | base64
   ```bash
   kubectl apply -f src/kubernetes/configmap.yaml
   kubectl apply -f src/kubernetes/secret.yaml
-  kubectl apply -f src/kubernetes/dockerconfigsecret.yaml
+  kubectl apply -f src/kubernetes/dockerconfigsecret.yaml (сделал kubectl create secret docker-registry dockerconfigjson \
+  --docker-server=ghcr.io \
+  --docker-username=AlexandrAnash \
+  --docker-password="$GHCR_PAT" \
+  -n cinemaabyss)
   kubectl apply -f src/kubernetes/postgres-init-configmap.yaml
   ```
 
@@ -271,8 +304,12 @@ cat .docker/config.json | base64
   Часть тестов с health-чек упадет, но создание событий отработает.
   Откройте логи event-service и сделайте скриншот обработки событий
 
+![Результат тестов с кубером](./test_kuber.png)
+
 #### Шаг 3
 Добавьте сюда скриншота вывода при вызове https://cinemaabyss.example.com/api/movies и  скриншот вывода event-service после вызова тестов.
+
+![В браузере вывод](./browser_kuber.png)
 
 
 ## Задание 4
@@ -348,7 +385,9 @@ minikube tunnel
 Потом вызовите 
 https://cinemaabyss.example.com/api/movies
 и приложите скриншот развертывания helm и вывода https://cinemaabyss.example.com/api/movies
-
+![helm upgrade](helm_upgrade.png)
+![ответ в браузере с понятием из helm](browser_response_helm.png)
+![Тесты с поднятием из helm](test_kuber_helm.png)
 
 # Задание 5
 Компания планирует активно развиваться и для повышения надежности, безопасности, реализации сетевых паттернов типа Circuit Breaker и канареечного деплоя вам как архитектору необходимо развернуть istio и настроить circuit breaker для monolith и movies сервисов.
@@ -371,7 +410,7 @@ kubectl get namespace -L istio-injection
 kubectl apply -f .\src\kubernetes\circuit-breaker-config.yaml -n cinemaabyss
 
 ```
-
+![Добавлены sidecars каждому сервису](sidecars_per_service.png)
 Тестирование
 
 # fortio
@@ -402,6 +441,8 @@ Code 503 : 399 (79.8 %)
 ```
 Можно еще проверить статистику
 
+![Запуск тестов](test_fortio_1.png)
+![Запуск тестов 2](test_fortio_2.png)
 ```bash
 kubectl exec -n cinemaabyss fortio-deploy-b6757cbbb-7c9qg -c istio-proxy -- pilot-agent request GET stats | grep movies-service | grep pending
 ```
@@ -414,7 +455,7 @@ You can see 21 for the upstream_rq_pending_overflow value which means 21 calls s
 ```
 
 Приложите скриншот работы circuit breaker'а
-
+![столько раз срабатывал circuit breaker](circuit_breaker.png)
 Удаляем все
 ```bash
 istioctl uninstall --purge

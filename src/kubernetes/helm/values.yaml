@@ -31,9 +31,10 @@ database:
 
 # Monolith configuration
 monolith:
+  name: monolith
   enabled: true
   image:
-    repository: ghcr.io/db-exp/cinemaabysstest/monolith
+    repository: ghcr.io/alexandranash/architecture-pro-cinemaabyss/monolith
     tag: latest
     pullPolicy: Always
   replicas: 1
@@ -51,9 +52,10 @@ monolith:
 
 # Proxy service configuration
 proxyService:
+  name: proxy-service
   enabled: true
   image:
-    repository: ghcr.io/db-exp/cinemaabysstest/proxy-service
+    repository: ghcr.io/alexandranash/architecture-pro-cinemaabyss/proxy-service
     tag: latest
     pullPolicy: Always
   replicas: 1
@@ -71,9 +73,10 @@ proxyService:
 
 # Movies service configuration
 moviesService:
+  name: movies-service
   enabled: true
   image:
-    repository: ghcr.io/db-exp/cinemaabysstest/movies-service
+    repository: ghcr.io/alexandranash/architecture-pro-cinemaabyss/movies-service
     tag: latest
     pullPolicy: Always
   replicas: 1
@@ -91,9 +94,10 @@ moviesService:
 
 # Events service configuration
 eventsService:
+  name: events-service
   enabled: true
   image:
-    repository: ghcr.io/db-exp/cinemaabysstest/events-service
+    repository: ghcr.io/alexandranash/architecture-pro-cinemaabyss/events-service
     tag: latest
     pullPolicy: Always
   replicas: 1
@@ -112,6 +116,7 @@ eventsService:
 # Kafka configuration
 kafka:
   enabled: true
+  name: kafka
   image:
     repository: wurstmeister/kafka
     tag: 2.13-2.7.0
@@ -138,6 +143,8 @@ kafka:
     - name: payment-events
       partitions: 1
       replicationFactor: 1
+  service:
+    port: 9092
 
 # Zookeeper configuration
 zookeeper:

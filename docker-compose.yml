@@ -28,6 +28,9 @@ services:
     container_name: cinemaabyss-zookeeper
     ports:
       - "2181:2181"
+    environment:
+      ZOOKEEPER_LOG4J_ROOT_LOGLEVEL: "WARN"
+      ZOO_LOG4J_PROP: "WARN,CONSOLE"
     networks:
       - cinemaabyss-network
 
@@ -45,6 +48,14 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_CREATE_TOPICS: "movie-events:1:1,user-events:1:1,payment-events:1:1"
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+      KAFKA_LOG4J_ROOT_LOGLEVEL: "ERROR"
+      KAFKA_LOG4J_LOGGERS: "kafka=ERROR,kafka.controller=ERROR,kafka.log.LogCleaner=ERROR,state.change.logger=ERROR,kafka.producer.async.DefaultEventHandler=ERROR,kafka.request.logger=ERROR"
+      KAFKA_TOOLS_LOG4J_LOGLEVEL: "ERROR"
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z localhost 9092 || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 6
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
@@ -57,7 +68,8 @@ services:
       dockerfile: Dockerfile
     container_name: cinemaabyss-monolith
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
     ports:
       - "8080:8080"
     environment:
@@ -73,7 +85,8 @@ services:
       dockerfile: Dockerfile
     container_name: cinemaabyss-movies-service
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
     ports:
       - "8081:8081"
     environment:
@@ -89,8 +102,10 @@ services:
       dockerfile: Dockerfile
     container_name: cinemaabyss-events-service
     depends_on:
-      - postgres
-      - kafka
+      kafka:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
     ports:
       - "8082:8082"
     environment:
@@ -126,13 +141,18 @@ services:
     image: provectuslabs/kafka-ui:latest
     container_name: cinemaabyss-kafka-ui
     depends_on:
-      - kafka
+      kafka:
+        condition: service_healthy
     ports:
       - "8090:8080"
     environment:
       KAFKA_CLUSTERS_0_NAME: cinemaabyss
       KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
       KAFKA_CLUSTERS_0_ZOOKEEPER: zookeeper:2181
+      LOGGING_LEVEL_ROOT: "ERROR"
+      LOGGING_LEVEL_COM_PROVECTUSLABS: "OFF"
+      LOGGING_LEVEL_ORG_APACHE_KAFKA: "ERROR"
+      LOGGING_LEVEL_COM_PROVECTUS: "ERROR"
     networks:
       - cinemaabyss-network
 
