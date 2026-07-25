@@ -2,17 +2,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: movies-service
+  name: {{ .Values.moviesService.name }}
   namespace: {{ .Values.global.namespace }}
   labels:
-    app: movies-service
+    app: {{ .Values.moviesService.name }}
     app.kubernetes.io/name: {{ include "cinemaabyss.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
 spec:
   replicas: {{ .Values.moviesService.replicas }}
   selector:
     matchLabels:
-      app: movies-service
+      app: {{ .Values.moviesService.name }}
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -21,10 +21,10 @@ spec:
   template:
     metadata:
       labels:
-        app: movies-service
+        app: {{ .Values.moviesService.name }}
     spec:
       containers:
-      - name: movies-service
+      - name: {{ .Values.moviesService.name }}
         image: {{ .Values.moviesService.image.repository }}:{{ .Values.moviesService.image.tag }}
         imagePullPolicy: {{ .Values.moviesService.image.pullPolicy }}
         ports:
@@ -60,15 +60,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: movies-service
+  name: {{ .Values.moviesService.name }}
   namespace: {{ .Values.global.namespace }}
   labels:
-    app: movies-service
+    app: {{ .Values.moviesService.name }}
     app.kubernetes.io/name: {{ include "cinemaabyss.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
 spec:
   selector:
-    app: movies-service
+    app: {{ .Values.moviesService.name }}
   ports:
   - port: {{ .Values.moviesService.service.port }}
     targetPort: {{ .Values.moviesService.service.targetPort }}
