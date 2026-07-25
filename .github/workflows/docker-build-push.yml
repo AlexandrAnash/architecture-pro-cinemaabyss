@@ -134,3 +134,35 @@ jobs:
           labels: ${{ steps.meta-events.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+  api-tests:
+    name: Run API Tests
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Start services with Docker Compose
+        run: |
+          docker compose up -d
+          echo "Waiting for services to be ready..."
+          sleep 120
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: tests/postman/package-lock.json
+
+      - name: Run API tests
+        working-directory: tests/postman
+        run: |
+          npm install
+          docker build -t cinemaabyss-api-tests .
+          docker run --network=cinemaabyss-network -v "$(pwd)/reports:/app/reports" cinemaabyss-api-tests
+
+      - name: Stop services
+        if: always()
+        run: docker compose down
