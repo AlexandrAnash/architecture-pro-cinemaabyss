@@ -208,7 +208,11 @@ cat .docker/config.json | base64
   ```bash
   kubectl apply -f src/kubernetes/configmap.yaml
   kubectl apply -f src/kubernetes/secret.yaml
-  kubectl apply -f src/kubernetes/dockerconfigsecret.yaml
+  kubectl apply -f src/kubernetes/dockerconfigsecret.yaml (сделал kubectl create secret docker-registry dockerconfigjson \
+  --docker-server=ghcr.io \
+  --docker-username=AlexandrAnash \
+  --docker-password="$GHCR_PAT" \
+  -n cinemaabyss)
   kubectl apply -f src/kubernetes/postgres-init-configmap.yaml
   ```
 
@@ -300,8 +304,12 @@ cat .docker/config.json | base64
   Часть тестов с health-чек упадет, но создание событий отработает.
   Откройте логи event-service и сделайте скриншот обработки событий
 
+![Результат тестов с кубером](./test_kuber.png)
+
 #### Шаг 3
 Добавьте сюда скриншота вывода при вызове https://cinemaabyss.example.com/api/movies и  скриншот вывода event-service после вызова тестов.
+
+![В браузере вывод](./browser_kuber.png)
 
 
 ## Задание 4
