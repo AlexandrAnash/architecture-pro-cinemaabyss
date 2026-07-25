@@ -410,7 +410,7 @@ kubectl get namespace -L istio-injection
 kubectl apply -f .\src\kubernetes\circuit-breaker-config.yaml -n cinemaabyss
 
 ```
-
+![Добавлены sidecars каждому сервису](sidecars_per_service.png)
 Тестирование
 
 # fortio
@@ -441,6 +441,8 @@ Code 503 : 399 (79.8 %)
 ```
 Можно еще проверить статистику
 
+![Запуск тестов](test_fortio_1.png)
+![Запуск тестов 2](test_fortio_2.png)
 ```bash
 kubectl exec -n cinemaabyss fortio-deploy-b6757cbbb-7c9qg -c istio-proxy -- pilot-agent request GET stats | grep movies-service | grep pending
 ```
@@ -453,7 +455,7 @@ You can see 21 for the upstream_rq_pending_overflow value which means 21 calls s
 ```
 
 Приложите скриншот работы circuit breaker'а
-
+![столько раз срабатывал circuit breaker](circuit_breaker.png)
 Удаляем все
 ```bash
 istioctl uninstall --purge
